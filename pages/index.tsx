@@ -3,7 +3,7 @@ import { walletconnect } from "connectors";
 import { useWeb3React } from "@web3-react/core";
 import { useTryActivation } from "hooks/useTryActivation";
 import { WalletConnectConnector } from "@web3-react/walletconnect-connector";
-import { types, data, domain } from 'example-data'
+import { types, data as inputData, domain } from 'example-data'
 
 const Home: NextPage = () => {
   const { account, connector, library } = useWeb3React();
@@ -18,6 +18,7 @@ const Home: NextPage = () => {
   const mockTransaction = async () => {
     try {
       const signer = library.getSigner()
+      const data = { ...inputData, receiver: account }
       const response = await signer._signTypedData(domain, types, data)
       console.log('response', response)
     } catch (error) {

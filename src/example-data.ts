@@ -25,7 +25,7 @@ export const types = {
 export const data = {
   sellToken: '0xc02aaa39b223fe8d0a0e5c4f27ead9083c756cc2',
   buyToken: '0x111111111117dc0aa78b770fa6a738034120c302',
-  receiver: '0x598a3112db37491e2ff13874744848b6587de751',
+  receiver: '',
   sellAmount: '54883417920448456',
   buyAmount: '104433369008430377969',
   validTo: '1647218646',
